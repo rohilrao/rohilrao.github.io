@@ -5,32 +5,45 @@
   <title>Rohil Rao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    html{scroll-behavior:smooth;}
     body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;background:#fdfdfd;color:#111;line-height:1.5;}
-    a{color:#007acc;text-decoration:none;}
+    a{color:#007acc;text-decoration:none;transition:color .2s ease;}
     a:hover{text-decoration:underline;}
+
     .container{max-width:900px;margin:auto;padding:20px;}
+
     header{text-align:center;margin-bottom:40px;}
-    nav{margin-top:10px;}
-    nav a{margin:0 10px;font-weight:bold;}
+    nav{margin-top:10px;position:sticky;top:0;background:#fdfdfd;padding:10px 0;border-bottom:1px solid #eee;z-index:100;}
+    nav a{margin:0 10px;font-weight:bold;padding:4px 0;}
+    nav a.active{color:#111;border-bottom:2px solid #007acc;}
+
     .section-title{font-size:22px;margin-top:40px;border-bottom:2px solid #ddd;}
     ul{list-style:none;padding-left:0;}
     li{margin-bottom:12px;}
     .paper-title{font-weight:bold;}
     .paper-venue{font-style:italic;}
-    img.profile{width:160px;border-radius:50%;}
+
+    img.profile{width:160px;border-radius:50%;transition:transform .3s ease;}
+    img.profile:hover{transform:rotate(3deg) scale(1.05);}
     @media(max-width:600px){img.profile{width:120px;}}
 
+    /* reveal animation */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:none;}
+
     /* projects grid */
-    .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;margin-top:20px;}
-    .project-card{text-decoration:none;color:inherit;}
-    .project-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.15);transition:transform .15s ease;}
-    .project-card:hover img{transform:translateY(-4px);}
-    .project-card span{display:block;margin-top:8px;font-size:14px;text-align:center;}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:20px;}
+    .project-card{display:flex;gap:14px;text-decoration:none;color:inherit;background:#fff;border-radius:14px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:transform .15s ease;align-items:center;}
+    .project-card:hover{transform:translateY(-4px);}
+    .project-card img{width:120px;aspect-ratio:1/1;object-fit:cover;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.15);flex-shrink:0;transition:transform .15s ease;}
+    .project-card:hover img{transform:scale(1.05);}
+    .project-info span.title{font-weight:600;font-size:15px;display:block;margin-bottom:4px;}
+    .project-info span.desc{font-size:14px;color:#333;}
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="reveal">
       <img src="https://github.com/rohilrao.png" alt="profile photo" class="profile"><br/>
       <h1>Rohil Rao</h1>
       <p>Computer Vision &amp; AI Safety Researcher</p>
@@ -43,13 +56,13 @@
       </nav>
     </header>
 
-    <section id="about">
+    <section id="about" class="reveal">
       <h2 class="section-title">About</h2>
       <p>I hold an M.Sc. in Computer Science from the Universität&nbsp;Bonn, where I specialized in Artificial Intelligence. My research focuses on systematic evaluation of deep neural networks, vision‑language models, and reliable AI for autonomous systems.</p>
       <p>Currently, I work with the <strong>AI Safety &amp; Certification</strong> group at <strong>Fraunhofer&nbsp;IAIS</strong>, developing methods to detect systematic weaknesses in perception models and leveraging foundation models (e.g.&nbsp;CLIP, SAM, GPT‑4V) for data generation, augmentation, and annotation.</p>
     </section>
 
-    <section id="publications">
+    <section id="publications" class="reveal">
       <h2 class="section-title">Selected Publications</h2>
       <ul>
         <li>
@@ -65,30 +78,39 @@
       </ul>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="reveal">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
         <a class="project-card" href="https://github.com/rohilrao/BrainMRI_Segmentation_UDA" target="_blank">
           <img src="https://raw.githubusercontent.com/rohilrao/BrainMRI_Segmentation_UDA/main/src/images/AllDomainsPlot.png" alt="Brain MRI UDA thumbnail"/>
-          <span>3D MRI&nbsp;Segmentation&nbsp;UDA</span>
+          <div class="project-info">
+            <span class="title">3D MRI Segmentation UDA</span>
+            <span class="desc">Entropy‑minimization domain adaptation pipeline that aligns 3D brain‑MRI segmentation models across scanners &amp; hospitals.</span>
+          </div>
         </a>
         <a class="project-card" href="https://github.com/rohilrao/VideoFramePrediction" target="_blank">
           <img src="https://raw.githubusercontent.com/rohilrao/VideoFramePrediction/main/Images/mmistCombined.png" alt="Self‑Supervised Video Prediction thumbnail"/>
-          <span>Self‑Supervised&nbsp;Video&nbsp;Prediction</span>
+          <div class="project-info">
+            <span class="title">Self‑Supervised Video Prediction</span>
+            <span class="desc">ConvLSTM model trained without labels to predict future frames and synthesize short video clips with temporal consistency.</span>
+          </div>
         </a>
         <a class="project-card" href="https://github.com/rohilrao/IR-NLP-Fake-News" target="_blank">
           <img src="https://raw.githubusercontent.com/rohilrao/IR-NLP-Fake-News/main/src/images/UI_Exp.PNG" alt="Fake News Detection UI screenshot"/>
-          <span>Explainable&nbsp;Fake&nbsp;News&nbsp;Detection</span>
+          <div class="project-info">
+            <span class="title">Explainable Fake News Detection</span>
+            <span class="desc">BERT‑based classifier with attention heat‑maps and Streamlit dashboard for transparent fake‑news detection.</span>
+          </div>
         </a>
       </div>
     </section>
 
-    <section id="cv">
+    <section id="cv" class="reveal">
       <h2 class="section-title">CV</h2>
       <p>Download my full résumé <a href="CV_Rohil.pdf">here (PDF)</a>.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal">
       <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:rohil93@gmail.com">rohil93@gmail.com</a><br/>
          GitHub: <a href="https://github.com/rohilrao">@rohilrao</a><br/>
@@ -96,9 +118,38 @@
       </p>
     </section>
 
-    <footer style="margin-top:40px;text-align:right;font-size:small;">
+    <footer style="margin-top:40px;text-align:right;font-size:small;" class="reveal">
       <p>Template adapted from <a href="https://github.com/jonbarron/website">Jon&nbsp;Barron</a>. Last updated April&nbsp;30,&nbsp;2025.</p>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section, header, footer');
+      const navLinks = document.querySelectorAll('nav a');
+
+      /* reveal on scroll */
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      sections.forEach(sec => observer.observe(sec));
+
+      /* active nav link */
+      const sectionArray = Array.from(document.querySelectorAll('section'));
+      function activateNav() {
+        let index = sectionArray.length;
+        while (--index && window.scrollY + 100 < sectionArray[index].offsetTop) {}
+        navLinks.forEach(link => link.classList.remove('active'));
+        navLinks[index]?.classList.add('active');
+      }
+      activateNav();
+      window.addEventListener('scroll', activateNav);
+    });
+  </script>
 </body>
 </html>
