@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rohil's Page</title>
+  <meta charset="utf-8">
+  <title>Rohil Rao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;background:#fdfdfd;color:#111;line-height:1.5;}
+    a{color:#007acc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .container{max-width:900px;margin:auto;padding:20px;}
+    header{text-align:center;margin-bottom:40px;}
+    nav{margin-top:10px;}
+    nav a{margin:0 10px;font-weight:bold;}
+    .section-title{font-size:22px;margin-top:40px;border-bottom:2px solid #ddd;}
+    ul{list-style:none;padding-left:0;}
+    li{margin-bottom:12px;}
+    .paper-title{font-weight:bold;}
+    .paper-venue{font-style:italic;}
+    img.profile{width:160px;border-radius:50%;}
+    @media(max-width:600px){img.profile{width:120px;}}
+  </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <p>I'm Rohil. Welcome to my GitHub Page!</p>
+  <div class="container">
+    <header>
+      <img src="images/profile.jpg" alt="profile photo" class="profile"><br/>
+      <h1>Rohil Rao</h1>
+      <p>Computer Vision &amp; AI Safety Researcher</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p>I hold an M.Sc. in Computer Science from the Universität&nbsp;Bonn, where I specialized in Artificial Intelligence. My research focuses on systematic evaluation of deep neural networks, vision‑language models, and reliable AI for autonomous systems.</p>
+      <p>Currently, I work with the <strong>AI Safety &amp; Certification</strong> group at <strong>Fraunhofer&nbsp;IAIS</strong>, developing methods to detect systematic weaknesses in perception models and leveraging foundation models (e.g.&nbsp;CLIP, SAM, GPT‑4V) for data generation, augmentation, and annotation.</p>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <ul>
+        <li>
+          <span class="paper-title">Detecting Systematic Weaknesses in Vision Models along Predefined Human‑Understandable Dimensions</span><br/>
+          S.&nbsp;S.&nbsp;Gannamaneni, <strong>R.&nbsp;P.&nbsp;Rao</strong>, M.&nbsp;Mock, M.&nbsp;Akila, S.&nbsp;Wrobel<br/>
+          <span class="paper-venue">arXiv</span>, 2025 &nbsp;·&nbsp;<a href="https://arxiv.org/pdf/2502.12360">pdf</a>
+        </li>
+        <li>
+          <span class="paper-title">Investigating CLIP for Metadata Generation in Autonomous Driving Datasets</span><br/>
+          <strong>R.&nbsp;P.&nbsp;Rao</strong> <em>et&nbsp;al.</em><br/>
+          <span class="paper-venue">CVPR Workshops</span>, 2023 &nbsp;·&nbsp;<a href="https://openaccess.thecvf.com/content/CVPR2023W/SAIAD/html/Gannamaneni_Investigating_CLIP_Performance_for_Meta-Data_Generation_in_AD_Datasets_CVPRW_2023_paper.html">paper</a>
+        </li>
+        <!-- Add the rest of your publications here -->
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <ul>
+        <li><strong>Entropy‑based Unsupervised Domain Adaptation for 3D MRI Segmentation</strong> &nbsp;·&nbsp;<a href="https://github.com/rohilrao/BrainMRI_Segmentation_UDA">code</a></li>
+        <li><strong>Self‑Supervised Video Generation</strong> &nbsp;·&nbsp;<a href="https://github.com/rohilrao/VideoFramePrediction">code</a></li>
+        <li><strong>Explainable Fake News Detection</strong> &nbsp;·&nbsp;<a href="https://github.com/rohilrao/IR-NLP-Fake-News">code</a></li>
+      </ul>
+    </section>
+
+    <section id="cv">
+      <h2 class="section-title">CV</h2>
+      <p>Download my full résumé <a href="CV_Rohil.pdf">here (PDF)</a>.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:rohil93@gmail.com">rohil93@gmail.com</a><br/>
+         GitHub: <a href="https://github.com/rohilrao">@rohilrao</a><br/>
+         LinkedIn: <a href="https://www.linkedin.com/in/rohilrao">rohilrao</a>
+      </p>
+    </section>
+
+    <footer style="margin-top:40px;text-align:right;font-size:small;">
+      <p>Template adapted from <a href="https://github.com/jonbarron/website">Jon&nbsp;Barron</a>. Last updated April&nbsp;30,&nbsp;2025.</p>
+    </footer>
+  </div>
 </body>
 </html>
